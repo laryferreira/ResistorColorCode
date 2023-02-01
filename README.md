@@ -2,6 +2,9 @@
 
 # Color Code Calculator for Resistors 
 <em>University Project- 05/02/2023 - First Semester</em>
+Hands-on project for Algorithms and Computer Programming discipline. 
+
+APC is known as the first programming discipline we take on our path as developers at the University of Brasília. We were given the task to complete this python function using our knowledge of <b>lists, strings and dictionaries</b>. It was a fun project! 
 
 ## Usage:
 

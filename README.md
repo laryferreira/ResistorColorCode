@@ -1,31 +1,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) 
 
-# Projeto APC - 05/02/2023 - 1º semestre
-Projeto final na disciplina Algoritimos e Programação de Computadores da Universidade de Brasília.
-
-## Finalidade:
-
-Esse código atribui uma função chamada IEC60062 que recebe um argumento de string chamado "resistência" e retorna uma lista de strings que representam os códigos de cores para esse valor de resistência de acordo com o padrão IEC 60062.
-
-A função primeiro divide a string de entrada em duas partes: "FM" e "T". "FM" representa o valor da resistência e "T" representa a tolerância. A função então usa dicionários (dic_cor_f, dic_cor_mu e dic_cor_t) para mapear o valor de resistência e tolerância para seus códigos de cores correspondentes.
-
-A função então calcula o valor da resistência multiplicando o valor da resistência (F) pela potência apropriada de 10 (M) determinada pelo dicionário dic_mu.
-
-Finalmente, a função usa os dicionários para procurar os códigos de cores para cada parte do valor de resistência (F, M e T) e os adiciona a uma lista de códigos de cores. Em seguida, ele retorna essa lista como a saída da função.
-
-## Casos de teste:
-Para usar a função IEC60062, basta importá-la do repositório e chamá-la com uma string no formato FMT. Por exemplo:
-<pre>
-<code>
-from IEC60062 import IEC60062
-
-print(IEC60062('1- 10')) = ['Marrom', 'Preta', 'Dourada', 'Prata']
-print(IEC60062('2.70M 0.01')) = ['Vermelha', 'Violeta', 'Preta', 'Amarela', 'Cinza']
-print(IEC60062('13m 0.02')) = ['Marrom', 'Laranja', 'Rosa', 'Amarela']
-</code>
-</pre>
-
-<img src="https://suntsu.com/wp-content/uploads/2021/10/Resistor-Code-Chart.png"/>
+# Color Code Calculator for Resistors 
+<em>University Project- 05/02/2023 - First Semester</em>
 
 ## Usage:
 
@@ -50,3 +26,25 @@ print(IEC60062('13m 0.02')) = ['Brown', 'Orange', 'Pink', 'Yellow']
 </code>
 </pre>
 
+
+## Finalidade:
+
+Esse código atribui uma função chamada IEC60062 que recebe um argumento de string chamado "resistência" e retorna uma lista de strings que representam os códigos de cores para esse valor de resistência de acordo com o padrão IEC 60062.
+
+A função primeiro divide a string de entrada em duas partes: "FM" e "T". "FM" representa o valor da resistência e "T" representa a tolerância. A função então usa dicionários (dic_cor_f, dic_cor_mu e dic_cor_t) para mapear o valor de resistência e tolerância para seus códigos de cores correspondentes.
+
+A função então calcula o valor da resistência multiplicando o valor da resistência (F) pela potência apropriada de 10 (M) determinada pelo dicionário dic_mu.
+
+Finalmente, a função usa os dicionários para procurar os códigos de cores para cada parte do valor de resistência (F, M e T) e os adiciona a uma lista de códigos de cores. Em seguida, ele retorna essa lista como a saída da função.
+
+## Casos de teste:
+Para usar a função IEC60062, basta importá-la do repositório e chamá-la com uma string no formato FMT. Por exemplo:
+<pre>
+<code>
+from IEC60062 import IEC60062
+
+print(IEC60062('1- 10')) = ['Marrom', 'Preta', 'Dourada', 'Prata']
+print(IEC60062('2.70M 0.01')) = ['Vermelha', 'Violeta', 'Preta', 'Amarela', 'Cinza']
+print(IEC60062('13m 0.02')) = ['Marrom', 'Laranja', 'Rosa', 'Amarela']
+</code>
+</pre>

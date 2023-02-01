@@ -1,7 +1,38 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) 
 
-# Projeto APC - 05/02/2023 - 1º semestre
-Projeto final na disciplina Algoritimos e Programação de Computadores da Universidade de Brasília.
+# APC Project - 05/02/2023 - First Semester
+Hands-on project for Algorithms and Computer Programming discipline, University of Brasilia, 2022/2. 
+APC is the first contact with programming we have on Universidade de Brasília, and in this project we had to explore some skills, such as:
+
+☑︎ Strings
+
+☑︎ Lists
+
+☑︎ Dictionaries
+
+## Usage:
+
+This repository contains a Python function called IEC60062 that takes a string representing the value of a resistor in FMT format and returns a list of colors that can be used to print the value of the resistor according to the IEC 60062 standard.
+
+The FMT format consists of three parts:
+
+F: A real number with up to 2 places of precision, representing the resistance value. Always will have a blank space between F and M. <br>
+M: The multiple of the ohm measurement unit, such as m (milli-ohms), (for 1 ohm), K (kilo-ohms), M (mega-ohms), G (Giga-ohms). <br>
+T: The tolerance value in percentage. <br>
+The IEC60062 function uses the first 2 or 3 colors to represent the resistance value, the next color to define the order of magnitude, and the last color to define the resistance tolerance percentage. It is guaranteed that the smallest possible value for a resistance is 10m ohm
+
+## Test cases:
+To use the IEC60062 function, just import it from the repository and call it with a string in FMT format. For example:
+<pre>
+<code>
+from IEC60062 import IEC60062
+
+print(IEC60062('1- 10')) = ['Brown', 'Black', 'Gold', 'Silver']
+print(IEC60062('2.70M 0.01')) = ['Red', 'Violet', 'Black', 'Yellow', 'Grey']
+print(IEC60062('13m 0.02')) = ['Brown', 'Orange', 'Pink', 'Yellow']
+</code>
+</pre>
+
 
 ## Finalidade:
 
@@ -27,26 +58,4 @@ print(IEC60062('13m 0.02')) = ['Marrom', 'Laranja', 'Rosa', 'Amarela']
 
 <img src="https://suntsu.com/wp-content/uploads/2021/10/Resistor-Code-Chart.png"/>
 
-## Usage:
-
-This repository contains a Python function called IEC60062 that takes a string representing the value of a resistor in FMT format and returns a list of colors that can be used to print the value of the resistor according to the IEC 60062 standard.
-
-The FMT format consists of three parts:
-
-F: A real number with up to 2 places of precision, representing the resistance value. Always will have a blank space between F and M. <br>
-M: The multiple of the ohm measurement unit, such as m (milli-ohms), (for 1 ohm), K (kilo-ohms), M (mega-ohms), G (Giga-ohms). <br>
-T: The tolerance value in percentage. <br>
-The IEC60062 function uses the first 2 or 3 colors to represent the resistance value, the next color to define the order of magnitude, and the last color to define the resistance tolerance percentage. It is guaranteed that the smallest possible value for a resistance is 10m ohm
-
-## Test cases:
-To use the IEC60062 function, just import it from the repository and call it with a string in FMT format. For example:
-<pre>
-<code>
-from IEC60062 import IEC60062
-
-print(IEC60062('1- 10')) = ['Brown', 'Black', 'Gold', 'Silver']
-print(IEC60062('2.70M 0.01')) = ['Red', 'Violet', 'Black', 'Yellow', 'Grey']
-print(IEC60062('13m 0.02')) = ['Brown', 'Orange', 'Pink', 'Yellow']
-</code>
-</pre>
 

@@ -1,53 +1,68 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) 
 
-# Color Code Calculator for Resistors 
-<em>University Project- 05/02/2023</em>
- - First Semester Hands-on project for Algorithms and Computer Programming discipline. 
+# Resistor Color Code Decoding Project
+This project is a Python implementation of the IEC 60062 standard for resistor color coding. It decodes the colors of a resistor into its resistance value and tolerance.
 
-APC is known as the first programming discipline we take on our path as developers at the University of Brasília. We were given the task to complete this python function using our knowledge of <b>lists, strings and dictionaries</b>. It was a fun project! 
+## Usage
+The script accepts a string in the format "<Resistance Value> <Tolerance>" as an input, for example, "100R 5%". The resistance value and tolerance must be separated by a space.
 
-## Usage:
+The output is a list of strings that represent the colors of the resistor's bands.
 
-This repository contains a Python function called IEC60062 that takes a string representing the value of a resistor in FMT format and returns a list of colors that can be used to print the value of the resistor according to the IEC 60062 standard.
+## Dictionary Definitions
+The following dictionaries are used in the script:
 
-The FMT format consists of three parts:
-
-F: A real number with up to 2 places of precision, representing the resistance value. Always will have a blank space between F and M. <br>
-M: The multiple of the ohm measurement unit, such as m (milli-ohms), (for 1 ohm), K (kilo-ohms), M (mega-ohms), G (Giga-ohms). <br>
-T: The tolerance value in percentage. <br>
-The IEC60062 function uses the first 2 or 3 colors to represent the resistance value, the next color to define the order of magnitude, and the last color to define the resistance tolerance percentage. It is guaranteed that the smallest possible value for a resistance is 10m ohm
-
-## Test cases:
-To use the IEC60062 function, just import it from the repository and call it with a string in FMT format. For example:
 <pre>
 <code>
-from IEC60062 import IEC60062
 
-print(IEC60062('1- 10')) = ['Brown', 'Black', 'Gold', 'Silver']
-print(IEC60062('2.70M 0.01')) = ['Red', 'Violet', 'Black', 'Yellow', 'Grey']
-print(IEC60062('13m 0.02')) = ['Brown', 'Orange', 'Pink', 'Yellow']
+dic_cor_f = {0: "Preta", 1: "Marrom", 2: "Vermelha", 3: "Laranja", 4: "Amarela", 5: "Verde",
+6: "Azul", 7: "Violeta", 8: "Cinza", 9: "Branca"}
+
+dic_cor_mu = {-3: "Rosa", -2: "Prata", -1: "Dourada", 0: "Preta", 1: "Marrom", 2: "Vermelha", 3: "Laranja", 4: "Amarela", 5: "Verde",
+6: "Azul", 7: "Violeta", 8: "Cinza", 9: "Branca"}
+
+dic_cor_t = {20: "Nenhuma", 10: "Prata", 5 : "Dourada", 1: "Marrom", 2: "Vermelha", 0.05: "Laranja", 0.02: "Amarela", 0.5: "Verde",
+0.25: "Azul", 0.1: "Violeta", 0.01: "Cinza"}
+
+dic_mu = {"m": -3, "-": 0, "K": 3, "M": 6, "G": 9}
+
 </code>
 </pre>
 
+These dictionaries map numbers or characters to their corresponding color.
 
-## Finalidade:
+## Function IEC60062
+The main function IEC60062 takes in the resistor string and decodes it into the colors of its bands. The function first splits the input string into the resistance value and tolerance. It then processes the resistance value to obtain the corresponding colors using the dictionaries defined above. The tolerance value is also processed and its corresponding color is obtained. 
 
-Esse código atribui uma função chamada IEC60062 que recebe um argumento de string chamado "resistência" e retorna uma lista de strings que representam os códigos de cores para esse valor de resistência de acordo com o padrão IEC 60062.
+The final output is a list of strings representing the colors of the resistor's bands.
 
-A função primeiro divide a string de entrada em duas partes: "FM" e "T". "FM" representa o valor da resistência e "T" representa a tolerância. A função então usa dicionários (dic_cor_f, dic_cor_mu e dic_cor_t) para mapear o valor de resistência e tolerância para seus códigos de cores correspondentes.
+## Conclusion
+This project provides an easy way to decode the colors of a resistor into its resistance value and tolerance. It follows the IEC 60062 standard and uses dictionaries to map numbers and characters to their corresponding colors.
 
-A função então calcula o valor da resistência multiplicando o valor da resistência (F) pela potência apropriada de 10 (M) determinada pelo dicionário dic_mu.
 
-Finalmente, a função usa os dicionários para procurar os códigos de cores para cada parte do valor de resistência (F, M e T) e os adiciona a uma lista de códigos de cores. Em seguida, ele retorna essa lista como a saída da função.
+# Projeto de Código de Cores de Resistores
+Este projeto é uma implementação de uma função em Python que retorna as cores correspondentes aos valores de resistência, tensão e tolerância de acordo com o padrão IEC 60062.
 
-## Casos de teste:
-Para usar a função IEC60062, basta importá-la do repositório e chamá-la com uma string no formato FMT. Por exemplo:
-<pre>
-<code>
-from IEC60062 import IEC60062
+## Instalação
+Este projeto não requer instalação de bibliotecas adicionais. Basta baixar o arquivo .py e importá-lo em seu projeto.
 
-print(IEC60062('1- 10')) = ['Marrom', 'Preta', 'Dourada', 'Prata']
-print(IEC60062('2.70M 0.01')) = ['Vermelha', 'Violeta', 'Preta', 'Amarela', 'Cinza']
-print(IEC60062('13m 0.02')) = ['Marrom', 'Laranja', 'Rosa', 'Amarela']
-</code>
-</pre>
+## Uso
+A função IEC60062 recebe como entrada uma string no formato "valor_de_resistência unidade_de_resistência tolerância". 
+
+Exemplo: "1.2M 5%".
+
+A função retorna uma lista de strings, representando as cores dos anéis na resistência.
+
+## Dicionários
+O código possui 4 dicionários com valores pré-definidos:
+
+- dic_cor_f: corresponde às cores dos fatores de resistência (1º e 2º anéis).
+
+- dic_cor_mu: corresponde às cores das unidades de resistência (3º anel).
+
+- dic_cor_t: corresponde às cores da tolerância (4º anel).
+
+- dic_mu: corresponde às unidades de resistência.
+
+## Notas
+O formato de entrada deve ser seguido rigorosamente para que a função retorne corretamente as cores.
+Caso a entrada seja inválida, a função retornará None.

@@ -2,7 +2,16 @@
 
 # Resistor Color Code Decoding Project
 This project is a Python implementation of the IEC 60062 standard for resistor color coding. It decodes the colors of a resistor into its resistance value and tolerance.
+### Table of Contents
 
+- [Usage](#Usage)
+- [Dictionary Definitions](#Dictionary-Definitions)
+- [Function IEC60062](#Function-IEC60062)
+- [Conclusion](#Conclusion)
+- [Uso](#Uso)
+- [Dicionários](#Dicionários)
+- [Notas](#Notas)
+---
 ## Usage
 The script accepts a string in the format "<Resistance Value> <Tolerance>" as an input, for example, "100R 5%". The resistance value and tolerance must be separated by a space.
 

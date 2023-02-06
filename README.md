@@ -42,9 +42,6 @@ This project provides an easy way to decode the colors of a resistor into its re
 # Projeto de Código de Cores de Resistores
 Este projeto é uma implementação de uma função em Python que retorna as cores correspondentes aos valores de resistência, tensão e tolerância de acordo com o padrão IEC 60062.
 
-## Instalação
-Este projeto não requer instalação de bibliotecas adicionais. Basta baixar o arquivo .py e importá-lo em seu projeto.
-
 ## Uso
 A função IEC60062 recebe como entrada uma string no formato "valor_de_resistência unidade_de_resistência tolerância". 
 

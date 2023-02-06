@@ -72,3 +72,6 @@ O código possui 4 dicionários com valores pré-definidos:
 ## Notas
 O formato de entrada deve ser seguido rigorosamente para que a função retorne corretamente as cores.
 Caso a entrada seja inválida, a função retornará None.
+
+
+
